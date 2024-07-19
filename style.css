@@ -121,7 +121,10 @@ a:hover {
   .view-mobile {
     display: block;
   }
-
+  #tourismPopup {
+    width: 80%;
+    left: 10%;
+  }
   .tourism-mobile-arrow-left,
   .tourism-mobile-arrow-right {
     position: absolute;

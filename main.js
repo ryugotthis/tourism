@@ -100,6 +100,18 @@ const tourismRender = () => {
                 `
                   )
                   .join('')}
+                  <div class="view-pc" onclick="tourismLeft()">
+            <i
+              class="tourism-arrow-left fa-solid fa-angles-left fa-2xl"
+              ;"
+            ></i>
+          </div>
+          <div class="view-pc" onclick="tourismRight()">
+            <i
+              class="tourism-arrow-right fa-solid fa-angles-right fa-2xl"
+              ;"
+            ></i>
+          </div>
               </div>
             </div>
             
@@ -191,18 +203,7 @@ const tourismRender = () => {
                   .join('')}
               </div>
             </div>
-            <div class="view-pc" onclick="tourismLeft()">
-            <i
-              class="tourism-arrow-left fa-solid fa-angles-left fa-2xl"
-              ;"
-            ></i>
-          </div>
-          <div class="view-pc" onclick="tourismRight()">
-            <i
-              class="tourism-arrow-right fa-solid fa-angles-right fa-2xl"
-              ;"
-            ></i>
-          </div>
+            
           </div>
         </div>
 
@@ -214,7 +215,9 @@ const tourismRender = () => {
             .map(
               (item, index) => `
             <div class="carousel-item ${index === 0 ? 'active' : ''}">
-              <div class="mobile-slide-image" style="background-image: url('${
+              <div class="mobile-slide-image" onclick="tourismShowPopup(${
+                index + 1
+              })" style="background-image: url('${
                 item.wr_link1 || 'https://via.placeholder.com/300x200'
               }')"></div>
               <div class="carousel-caption">
@@ -236,19 +239,7 @@ const tourismRender = () => {
       </div>
     </div>
   `;
-  //화살표버튼 pc
-  // dataHTML += `<div class="view-pc" onclick="tourismLeft()">
-  //           <i
-  //             class="tourism-arrow-left fa-solid fa-angles-left fa-2xl"
-  //             ;"
-  //           ></i>
-  //         </div>
-  //         <div class="view-pc" onclick="tourismRight()">
-  //           <i
-  //             class="tourism-arrow-right fa-solid fa-angles-right fa-2xl"
-  //             ;"
-  //           ></i>
-  //         </div>`;
+
   //팝업창
   dataHTML += `<div id="tourismPopup" class="hide layer">
   <div class="content">
